@@ -10,6 +10,6 @@ class Bucket(models.Model):
     time = models.DateTimeField(verbose_name="Время резервации")
 
     class Meta:
-        db_table = "ucket"
+        db_table = "bucket"
         verbose_name="Корзина"
         verbose_name_plural="Корзинаы"
