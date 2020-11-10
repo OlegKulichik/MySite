@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}{{article.brend}}{%endblock%}
+
+{%block item_page %}
+    <div class="features_datails">
+        <h3>{{article.brend}}</h3>
+        <p>Модель - {{article.model}}</p>
+        <p>Тип кузова - {{article.body}}</p>
+        <p>Стоимость - {{article.cost}} $</p>
+        <img src="/media/{{article.photo}}" width="700" height="500" alt="">
+    </div>
+{% endblock item_page %}

@@ -1,13 +1,12 @@
 from django.db import models
 
 
-
 class Item(models.Model):
     COLORS = [
-        ("R","red"),
-        ("W","white"),
-        ("B","black"),
-        ("G","gray"),
+        ("R", "red"),
+        ("W", "white"),
+        ("B", "black"),
+        ("G", "gray"),
     ]
 
     def load_photo(self, filename):
@@ -29,12 +28,13 @@ class Item(models.Model):
     cost = models.FloatField(verbose_name="Стоимость авто")
     desc = models.TextField(verbose_name="Описание товара")
     amount = models.IntegerField(verbose_name="Количество товара")
-    new = models.BooleanField(default=True, verbose_name="Состояние-ноый б/у")
-    photo = models.ImageField(upload_to=load_photo, verbose_name="Фото авто")
-
+    new = models.BooleanField(default=True, verbose_name="Состояние - новый/бу")
+    photo = models.ImageField(upload_to=load_photo)
+    
+    # def __str__(self):
+    #     return self.brend
+    
     class Meta:
-        db_table= "items"
+        db_table = "items"
         verbose_name = "Товар"
         verbose_name_plural = "Товары"
-
-

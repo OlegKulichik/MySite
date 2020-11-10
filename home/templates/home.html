@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Главная страница{%endblock%}
+
+{%block home_page %}
+    <div class="features">
+        <h1>Главная страница</h1>
+        <p>Привет</p>
+        <a href="{% url 'home'%}"><button class="btn btn-danger">Главная</button></a>
+    </div>
+{% endblock home_page %}
