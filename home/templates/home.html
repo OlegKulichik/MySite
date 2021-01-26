@@ -7,5 +7,9 @@
         <h1>Главная страница</h1>
         <p>Привет</p>
         <a href="{% url 'home'%}"><button class="btn btn-danger">Главная</button></a>
+        <form method = "POST">{% csrf_token %}
+            {{form}} 
+            <input type = "submit" value = "Submit"> 
+        </form> 
     </div>
 {% endblock home_page %}

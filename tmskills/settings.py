@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -43,6 +44,8 @@ INSTALLED_APPS = [
     "user",
     "item",
     "backet",
+    'allauth',
+    'allauth.account',
 ]
 
 MIDDLEWARE = [
@@ -90,6 +93,10 @@ DATABASES = {
     }
 }
 
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -136,6 +143,8 @@ MEDIA_ROOT = BASE_DIR / "tmskills" / "media"
 MEDIA_URL = '/media/'
 
 AUTH_USER_MODEL = "user.User"
+
+SITE_ID = 1
 
 # MEDIA_URL = os.path.join(BASE_DIR, 'tmskills/media/')
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'tmskills/media')
